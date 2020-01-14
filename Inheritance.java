@@ -1,5 +1,5 @@
 class SQL{
-    public SQL(){
+    protected SQL(){
         System.out.print("Intializing queries to create ");
     }
     protected void create(){
