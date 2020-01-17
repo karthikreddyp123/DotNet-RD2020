@@ -1,0 +1,281 @@
+.class private auto ansi '<Module>'
+{
+} // end of class <Module>
+
+.class private auto ansi HelloWorld
+    extends [System.Private.CoreLib]System.Object
+{
+    // Methods
+    .method public specialname rtspecialname 
+        instance void .ctor () cil managed 
+    {
+        // Method begins at RVA 0x2050
+        // Code size 7 (0x7)
+        .maxstack 8
+
+        IL_0000: ldarg.0
+        IL_0001: call instance void [System.Private.CoreLib]System.Object::.ctor()
+        IL_0006: ret
+    } // end of method HelloWorld::.ctor
+
+    .method private static 
+        void Main () cil managed 
+    {
+        // Method begins at RVA 0x2058
+        // Code size 341 (0x155)
+        .maxstack 4
+        .locals init (
+            [0] class Calculator,
+            [1] bool,
+            [2] int32,
+            [3] int32,
+            [4] int32,
+            [5] bool,
+            [6] bool
+        )
+
+        IL_0000: nop
+        IL_0001: ldstr "Opening Calculator."
+        IL_0006: call void [System.Console]System.Console::WriteLine(string)
+        IL_000b: nop
+        IL_000c: newobj instance void Calculator::.ctor()
+        IL_0011: stloc.0
+        IL_0012: ldc.i4.1
+        IL_0013: stloc.1
+        // sequence point: hidden
+        IL_0014: br IL_014a
+        // loop start (head: IL_014a)
+            IL_0019: ldstr "1. Addition"
+            IL_001e: call void [System.Console]System.Console::WriteLine(string)
+            IL_0023: nop
+            IL_0024: ldstr "2. Subtraction"
+            IL_0029: call void [System.Console]System.Console::WriteLine(string)
+            IL_002e: nop
+            IL_002f: ldstr "3. Multiplication"
+            IL_0034: call void [System.Console]System.Console::WriteLine(string)
+            IL_0039: nop
+            IL_003a: ldstr "4. Division"
+            IL_003f: call void [System.Console]System.Console::WriteLine(string)
+            IL_0044: nop
+            IL_0045: ldstr "5. Exit"
+            IL_004a: call void [System.Console]System.Console::WriteLine(string)
+            IL_004f: nop
+            IL_0050: ldstr "Choose any Option"
+            IL_0055: call void [System.Console]System.Console::WriteLine(string)
+            IL_005a: nop
+            IL_005b: call string [System.Console]System.Console::ReadLine()
+            IL_0060: call int32 [System.Private.CoreLib]System.Convert::ToInt32(string)
+            IL_0065: stloc.2
+            IL_0066: ldloc.2
+            IL_0067: ldc.i4.5
+            IL_0068: ceq
+            IL_006a: stloc.s 5
+            // sequence point: hidden
+            IL_006c: ldloc.s 5
+            IL_006e: brfalse.s IL_0075
+
+            IL_0070: br IL_0154
+
+            IL_0075: nop
+            IL_0076: ldstr "Enter two numbers:"
+            IL_007b: call void [System.Console]System.Console::WriteLine(string)
+            IL_0080: nop
+            IL_0081: call string [System.Console]System.Console::ReadLine()
+            IL_0086: call int32 [System.Private.CoreLib]System.Convert::ToInt32(string)
+            IL_008b: stloc.3
+            IL_008c: call string [System.Console]System.Console::ReadLine()
+            IL_0091: call int32 [System.Private.CoreLib]System.Convert::ToInt32(string)
+            IL_0096: stloc.s 4
+            IL_0098: nop
+            IL_0099: ldloc.2
+            IL_009a: ldc.i4.1
+            IL_009b: sub
+            IL_009c: switch (IL_00b6, IL_00d7, IL_00f8, IL_0119)
+
+            IL_00b1: br IL_013a
+
+            IL_00b6: nop
+            IL_00b7: ldstr "Result:"
+            IL_00bc: ldloc.0
+            IL_00bd: ldloc.3
+            IL_00be: ldloc.s 4
+            IL_00c0: callvirt instance int32 Calculator::'add'(int32, int32)
+            IL_00c5: call string [Microsoft.VisualBasic.Core]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+            IL_00ca: call string [System.Private.CoreLib]System.String::Concat(string, string)
+            IL_00cf: call void [System.Console]System.Console::WriteLine(string)
+            IL_00d4: nop
+            IL_00d5: br.s IL_0148
+
+            IL_00d7: nop
+            IL_00d8: ldstr "Result:"
+            IL_00dd: ldloc.0
+            IL_00de: ldloc.3
+            IL_00df: ldloc.s 4
+            IL_00e1: callvirt instance int32 Calculator::'sub'(int32, int32)
+            IL_00e6: call string [Microsoft.VisualBasic.Core]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+            IL_00eb: call string [System.Private.CoreLib]System.String::Concat(string, string)
+            IL_00f0: call void [System.Console]System.Console::WriteLine(string)
+            IL_00f5: nop
+            IL_00f6: br.s IL_0148
+
+            IL_00f8: nop
+            IL_00f9: ldstr "Result:"
+            IL_00fe: ldloc.0
+            IL_00ff: ldloc.3
+            IL_0100: ldloc.s 4
+            IL_0102: callvirt instance int32 Calculator::multiply(int32, int32)
+            IL_0107: call string [Microsoft.VisualBasic.Core]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+            IL_010c: call string [System.Private.CoreLib]System.String::Concat(string, string)
+            IL_0111: call void [System.Console]System.Console::WriteLine(string)
+            IL_0116: nop
+            IL_0117: br.s IL_0148
+
+            IL_0119: nop
+            IL_011a: ldstr "Result:"
+            IL_011f: ldloc.0
+            IL_0120: ldloc.3
+            IL_0121: ldloc.s 4
+            IL_0123: callvirt instance float64 Calculator::'div'(int32, int32)
+            IL_0128: call string [Microsoft.VisualBasic.Core]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(float64)
+            IL_012d: call string [System.Private.CoreLib]System.String::Concat(string, string)
+            IL_0132: call void [System.Console]System.Console::WriteLine(string)
+            IL_0137: nop
+            IL_0138: br.s IL_0148
+
+            IL_013a: nop
+            IL_013b: ldstr "Choose valid option."
+            IL_0140: call void [System.Console]System.Console::WriteLine(string)
+            IL_0145: nop
+            IL_0146: br.s IL_0148
+
+            IL_0148: nop
+            IL_0149: nop
+
+            IL_014a: ldloc.1
+            IL_014b: stloc.s 6
+            // sequence point: hidden
+            IL_014d: ldloc.s 6
+            IL_014f: brtrue IL_0019
+        // end loop
+
+        IL_0154: ret
+    } // end of method HelloWorld::Main
+
+} // end of class HelloWorld
+
+.class private auto ansi Calculator
+    extends [System.Private.CoreLib]System.Object
+{
+    // Methods
+    .method public specialname rtspecialname 
+        instance void .ctor () cil managed 
+    {
+        // Method begins at RVA 0x2050
+        // Code size 7 (0x7)
+        .maxstack 8
+
+        IL_0000: ldarg.0
+        IL_0001: call instance void [System.Private.CoreLib]System.Object::.ctor()
+        IL_0006: ret
+    } // end of method Calculator::.ctor
+
+    .method public 
+        instance int32 'add' (
+            int32 num1,
+            int32 num2
+        ) cil managed 
+    {
+        // Method begins at RVA 0x21bc
+        // Code size 9 (0x9)
+        .maxstack 2
+        .locals init (
+            [0] int32
+        )
+
+        IL_0000: nop
+        IL_0001: ldarg.1
+        IL_0002: ldarg.2
+        IL_0003: add.ovf
+        IL_0004: stloc.0
+        IL_0005: br.s IL_0007
+
+        IL_0007: ldloc.0
+        IL_0008: ret
+    } // end of method Calculator::'add'
+
+    .method public 
+        instance int32 'sub' (
+            int32 num1,
+            int32 num2
+        ) cil managed 
+    {
+        // Method begins at RVA 0x21d4
+        // Code size 9 (0x9)
+        .maxstack 2
+        .locals init (
+            [0] int32
+        )
+
+        IL_0000: nop
+        IL_0001: ldarg.1
+        IL_0002: ldarg.2
+        IL_0003: sub.ovf
+        IL_0004: stloc.0
+        IL_0005: br.s IL_0007
+
+        IL_0007: ldloc.0
+        IL_0008: ret
+    } // end of method Calculator::'sub'
+
+    .method public 
+        instance int32 multiply (
+            int32 num1,
+            int32 num2
+        ) cil managed 
+    {
+        // Method begins at RVA 0x21ec
+        // Code size 9 (0x9)
+        .maxstack 2
+        .locals init (
+            [0] int32
+        )
+
+        IL_0000: nop
+        IL_0001: ldarg.1
+        IL_0002: ldarg.2
+        IL_0003: mul.ovf
+        IL_0004: stloc.0
+        IL_0005: br.s IL_0007
+
+        IL_0007: ldloc.0
+        IL_0008: ret
+    } // end of method Calculator::multiply
+
+    .method public 
+        instance float64 'div' (
+            int32 num1,
+            int32 num2
+        ) cil managed 
+    {
+        // Method begins at RVA 0x2204
+        // Code size 11 (0xb)
+        .maxstack 2
+        .locals init (
+            [0] float64
+        )
+
+        IL_0000: nop
+        IL_0001: ldarg.1
+        IL_0002: conv.r8
+        IL_0003: ldarg.2
+        IL_0004: conv.r8
+        IL_0005: div
+        IL_0006: stloc.0
+        IL_0007: br.s IL_0009
+
+        IL_0009: ldloc.0
+        IL_000a: ret
+    } // end of method Calculator::'div'
+
+} // end of class Calculator
+

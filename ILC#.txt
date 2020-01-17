@@ -1,0 +1,299 @@
+.class private auto ansi '<Module>'
+{
+} // end of class <Module>
+
+.class private auto ansi beforefieldinit HelloWorld
+    extends [System.Private.CoreLib]System.Object
+{
+    // Methods
+    .method private hidebysig static 
+        void Main () cil managed 
+    {
+        // Method begins at RVA 0x2050
+        // Code size 364 (0x16c)
+        .maxstack 4
+        .locals init (
+            [0] class Calculator,
+            [1] bool,
+            [2] int32,
+            [3] int32,
+            [4] int32,
+            [5] bool,
+            [6] int32,
+            [7] int32,
+            [8] int32,
+            [9] float64,
+            [10] bool
+        )
+
+        IL_0000: nop
+        IL_0001: ldstr "Opening Calculator."
+        IL_0006: call void [System.Console]System.Console::WriteLine(string)
+        IL_000b: nop
+        IL_000c: newobj instance void Calculator::.ctor()
+        IL_0011: stloc.0
+        IL_0012: ldc.i4.1
+        IL_0013: stloc.1
+        // sequence point: hidden
+        IL_0014: br IL_0161
+        // loop start (head: IL_0161)
+            IL_0019: nop
+            IL_001a: ldstr "1. Addition"
+            IL_001f: call void [System.Console]System.Console::WriteLine(string)
+            IL_0024: nop
+            IL_0025: ldstr "2. Subtraction"
+            IL_002a: call void [System.Console]System.Console::WriteLine(string)
+            IL_002f: nop
+            IL_0030: ldstr "3. Multiplication"
+            IL_0035: call void [System.Console]System.Console::WriteLine(string)
+            IL_003a: nop
+            IL_003b: ldstr "4. Division"
+            IL_0040: call void [System.Console]System.Console::WriteLine(string)
+            IL_0045: nop
+            IL_0046: ldstr "5. Exit"
+            IL_004b: call void [System.Console]System.Console::WriteLine(string)
+            IL_0050: nop
+            IL_0051: ldstr "Choose any Option"
+            IL_0056: call void [System.Console]System.Console::WriteLine(string)
+            IL_005b: nop
+            IL_005c: call string [System.Console]System.Console::ReadLine()
+            IL_0061: call int32 [System.Private.CoreLib]System.Convert::ToInt32(string)
+            IL_0066: stloc.2
+            IL_0067: ldloc.2
+            IL_0068: ldc.i4.5
+            IL_0069: ceq
+            IL_006b: stloc.s 5
+            // sequence point: hidden
+            IL_006d: ldloc.s 5
+            IL_006f: brfalse.s IL_0077
+
+            IL_0071: nop
+            IL_0072: br IL_016b
+
+            IL_0077: ldstr "Enter two numbers:"
+            IL_007c: call void [System.Console]System.Console::WriteLine(string)
+            IL_0081: nop
+            IL_0082: call string [System.Console]System.Console::ReadLine()
+            IL_0087: call int32 [System.Private.CoreLib]System.Convert::ToInt32(string)
+            IL_008c: stloc.3
+            IL_008d: call string [System.Console]System.Console::ReadLine()
+            IL_0092: call int32 [System.Private.CoreLib]System.Convert::ToInt32(string)
+            IL_0097: stloc.s 4
+            IL_0099: ldloc.2
+            IL_009a: stloc.s 7
+            // sequence point: hidden
+            IL_009c: ldloc.s 7
+            IL_009e: stloc.s 6
+            // sequence point: hidden
+            IL_00a0: ldloc.s 6
+            IL_00a2: ldc.i4.1
+            IL_00a3: sub
+            IL_00a4: switch (IL_00be, IL_00e3, IL_0108, IL_012d)
+
+            IL_00b9: br IL_0152
+
+            IL_00be: nop
+            IL_00bf: ldstr "Result:"
+            IL_00c4: ldloc.0
+            IL_00c5: ldloc.3
+            IL_00c6: ldloc.s 4
+            IL_00c8: callvirt instance int32 Calculator::'add'(int32, int32)
+            IL_00cd: stloc.s 8
+            IL_00cf: ldloca.s 8
+            IL_00d1: call instance string [System.Private.CoreLib]System.Int32::ToString()
+            IL_00d6: call string [System.Private.CoreLib]System.String::Concat(string, string)
+            IL_00db: call void [System.Console]System.Console::WriteLine(string)
+            IL_00e0: nop
+            IL_00e1: br.s IL_0160
+
+            IL_00e3: nop
+            IL_00e4: ldstr "Result:"
+            IL_00e9: ldloc.0
+            IL_00ea: ldloc.3
+            IL_00eb: ldloc.s 4
+            IL_00ed: callvirt instance int32 Calculator::'sub'(int32, int32)
+            IL_00f2: stloc.s 8
+            IL_00f4: ldloca.s 8
+            IL_00f6: call instance string [System.Private.CoreLib]System.Int32::ToString()
+            IL_00fb: call string [System.Private.CoreLib]System.String::Concat(string, string)
+            IL_0100: call void [System.Console]System.Console::WriteLine(string)
+            IL_0105: nop
+            IL_0106: br.s IL_0160
+
+            IL_0108: nop
+            IL_0109: ldstr "Result:"
+            IL_010e: ldloc.0
+            IL_010f: ldloc.3
+            IL_0110: ldloc.s 4
+            IL_0112: callvirt instance int32 Calculator::multiply(int32, int32)
+            IL_0117: stloc.s 8
+            IL_0119: ldloca.s 8
+            IL_011b: call instance string [System.Private.CoreLib]System.Int32::ToString()
+            IL_0120: call string [System.Private.CoreLib]System.String::Concat(string, string)
+            IL_0125: call void [System.Console]System.Console::WriteLine(string)
+            IL_012a: nop
+            IL_012b: br.s IL_0160
+
+            IL_012d: nop
+            IL_012e: ldstr "Result:"
+            IL_0133: ldloc.0
+            IL_0134: ldloc.3
+            IL_0135: ldloc.s 4
+            IL_0137: callvirt instance float64 Calculator::'div'(int32, int32)
+            IL_013c: stloc.s 9
+            IL_013e: ldloca.s 9
+            IL_0140: call instance string [System.Private.CoreLib]System.Double::ToString()
+            IL_0145: call string [System.Private.CoreLib]System.String::Concat(string, string)
+            IL_014a: call void [System.Console]System.Console::WriteLine(string)
+            IL_014f: nop
+            IL_0150: br.s IL_0160
+
+            IL_0152: nop
+            IL_0153: ldstr "Choose valid option."
+            IL_0158: call void [System.Console]System.Console::WriteLine(string)
+            IL_015d: nop
+            IL_015e: br.s IL_0160
+
+            IL_0160: nop
+
+            IL_0161: ldloc.1
+            IL_0162: stloc.s 10
+            // sequence point: hidden
+            IL_0164: ldloc.s 10
+            IL_0166: brtrue IL_0019
+        // end loop
+
+        IL_016b: ret
+    } // end of method HelloWorld::Main
+
+    .method public hidebysig specialname rtspecialname 
+        instance void .ctor () cil managed 
+    {
+        // Method begins at RVA 0x21c8
+        // Code size 8 (0x8)
+        .maxstack 8
+
+        IL_0000: ldarg.0
+        IL_0001: call instance void [System.Private.CoreLib]System.Object::.ctor()
+        IL_0006: nop
+        IL_0007: ret
+    } // end of method HelloWorld::.ctor
+
+} // end of class HelloWorld
+
+.class private auto ansi beforefieldinit Calculator
+    extends [System.Private.CoreLib]System.Object
+{
+    // Methods
+    .method public hidebysig 
+        instance int32 'add' (
+            int32 num1,
+            int32 num2
+        ) cil managed 
+    {
+        // Method begins at RVA 0x21d4
+        // Code size 9 (0x9)
+        .maxstack 2
+        .locals init (
+            [0] int32
+        )
+
+        IL_0000: nop
+        IL_0001: ldarg.1
+        IL_0002: ldarg.2
+        IL_0003: add
+        IL_0004: stloc.0
+        IL_0005: br.s IL_0007
+
+        IL_0007: ldloc.0
+        IL_0008: ret
+    } // end of method Calculator::'add'
+
+    .method public hidebysig 
+        instance int32 'sub' (
+            int32 num1,
+            int32 num2
+        ) cil managed 
+    {
+        // Method begins at RVA 0x21ec
+        // Code size 9 (0x9)
+        .maxstack 2
+        .locals init (
+            [0] int32
+        )
+
+        IL_0000: nop
+        IL_0001: ldarg.1
+        IL_0002: ldarg.2
+        IL_0003: sub
+        IL_0004: stloc.0
+        IL_0005: br.s IL_0007
+
+        IL_0007: ldloc.0
+        IL_0008: ret
+    } // end of method Calculator::'sub'
+
+    .method public hidebysig 
+        instance int32 multiply (
+            int32 num1,
+            int32 num2
+        ) cil managed 
+    {
+        // Method begins at RVA 0x2204
+        // Code size 9 (0x9)
+        .maxstack 2
+        .locals init (
+            [0] int32
+        )
+
+        IL_0000: nop
+        IL_0001: ldarg.1
+        IL_0002: ldarg.2
+        IL_0003: mul
+        IL_0004: stloc.0
+        IL_0005: br.s IL_0007
+
+        IL_0007: ldloc.0
+        IL_0008: ret
+    } // end of method Calculator::multiply
+
+    .method public hidebysig 
+        instance float64 'div' (
+            int32 num1,
+            int32 num2
+        ) cil managed 
+    {
+        // Method begins at RVA 0x221c
+        // Code size 10 (0xa)
+        .maxstack 2
+        .locals init (
+            [0] float64
+        )
+
+        IL_0000: nop
+        IL_0001: ldarg.1
+        IL_0002: ldarg.2
+        IL_0003: div
+        IL_0004: conv.r8
+        IL_0005: stloc.0
+        IL_0006: br.s IL_0008
+
+        IL_0008: ldloc.0
+        IL_0009: ret
+    } // end of method Calculator::'div'
+
+    .method public hidebysig specialname rtspecialname 
+        instance void .ctor () cil managed 
+    {
+        // Method begins at RVA 0x21c8
+        // Code size 8 (0x8)
+        .maxstack 8
+
+        IL_0000: ldarg.0
+        IL_0001: call instance void [System.Private.CoreLib]System.Object::.ctor()
+        IL_0006: nop
+        IL_0007: ret
+    } // end of method Calculator::.ctor
+
+} // end of class Calculator
+
